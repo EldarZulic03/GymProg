@@ -1,10 +1,15 @@
 const webpack = require("@nativescript/webpack");
 
 module.exports = (env) => {
-	webpack.init(env);
+    webpack.init(env);
 
-	// Learn how to customize:
-	// https://docs.nativescript.org/webpack
+    const config = webpack.resolveConfig();
 
-	return webpack.resolveConfig();
+    // Add "svelte" to the conditionNames array
+    config.resolve = {
+        ...config.resolve,
+        conditionNames: ["svelte", "browser", "module", "main"]
+    };
+
+    return config;
 };
