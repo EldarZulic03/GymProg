@@ -1,1 +1,1 @@
-# ProgTrack
+# Track your gym progress
